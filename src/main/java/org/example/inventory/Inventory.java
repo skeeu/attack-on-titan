@@ -1,4 +1,4 @@
-package org.example;
+package org.example.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class Inventory {
     public void addItem(GameItem item) {
         if (this.items.size() < this.capacity) {
             items.add(item);
-            System.out.println("You`ve added " + item.name + " item to inventory");
+            System.out.println("You`ve added " + item.getName() + " item to inventory");
         } else {
             System.out.println("Your inventory is full: " + this.capacity + "/" + this.capacity + " slots occupied");
         }
@@ -25,7 +25,7 @@ public class Inventory {
 
     public void showItems() {
         for(int i = 0; i < this.items.size(); i++) {
-            System.out.println(i + 1 + ". " + items.get(i).name);
+            System.out.println(i + 1 + ". " + items.get(i).getName());
         }
     }
 
@@ -42,7 +42,7 @@ public class Inventory {
                 System.out.println("Incorrent item");
                 continue;
             }
-            System.out.println("You`ve removed " + this.items.get(itemIndex - 1).name + " from inventory");
+            System.out.println("You`ve removed " + this.items.get(itemIndex - 1).getName() + " from inventory");
             this.items.remove(itemIndex - 1);
             break;
         }
